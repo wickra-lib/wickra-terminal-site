@@ -1,4 +1,6 @@
 import { defineConfig } from 'vitepress'
+import wasm from 'vite-plugin-wasm'
+import topLevelAwait from 'vite-plugin-top-level-await'
 
 // JSON-LD structured data (Organization + SoftwareApplication) so search
 // engines and LLM crawlers can resolve the product's entity, ownership, and
@@ -90,6 +92,9 @@ export default defineConfig({
 
     nav: [
       { text: 'Home', link: '/' },
+      { text: 'Demo', link: '/demo' },
+      { text: 'Live', link: 'https://live.wickra.org' },
+      { text: 'Benchmarks', link: '/benchmarks' },
       {
         text: 'API',
         items: [
@@ -172,5 +177,24 @@ export default defineConfig({
   markdown: {
     theme: { light: 'github-light', dark: 'github-dark' },
     lineNumbers: false,
+  },
+
+  vite: {
+    // wickra-wasm is a wasm-pack `--target bundler` build: its JS glue does
+    // `import * as wasm from './wickra_wasm_bg.wasm'` and expects the bundler
+    // to instantiate the module and expose its exports. vite-plugin-wasm does
+    // exactly that, and vite-plugin-top-level-await handles the top-level await
+    // the wasm init emits.
+    plugins: [wasm(), topLevelAwait()],
+    optimizeDeps: {
+      // esbuild's dep pre-bundling can't follow the .wasm ESM import, so keep
+      // wickra-wasm out of it and let vite-plugin-wasm handle it on demand.
+      exclude: ['wickra-wasm'],
+    },
+    server: {
+      fs: {
+        allow: ['..'],
+      },
+    },
   },
 })
