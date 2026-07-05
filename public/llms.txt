@@ -1,0 +1,16 @@
+# Wickra Terminal
+
+> A streaming trading terminal built on the Wickra core — live charts, order-book, tape and 514 streaming indicators — with a native TUI and a Web front-end as selectable renderers of the same logic. One data-driven core, N front-ends, in ten languages, deterministic and byte-identical across every binding.
+
+Wickra Terminal is a streaming trading terminal with one data-driven core (`terminal-core`) that folds market events into an O(1) `AppState` and turns panels into view-models (values, series, colours) — never renderer commands. The native TUI maps a view-model to a ratatui widget; the Web app maps the same view-model to a canvas draw. Data arrives through a `DataSource` trait with three activatable modules: `Live` (the wickra-exchange connectivity layer over the ten largest venues), `Replay` (the wickra-backtest engine with time-machine seek), and `Synth` (a deterministic synthetic feed). The core is exposed as a JSON-over-C-ABI data API (`Terminal::command_json`) in Rust, Python, Node.js, WASM and — over a C ABI — C, C++, C#, Go, Java and R, so a developer in any language builds their own front-end on the same core. Released under the MIT OR Apache-2.0 license.
+
+## Links
+
+- [GitHub](https://github.com/wickra-lib/wickra-terminal): Source, issues, and releases.
+- [crates.io](https://crates.io/crates/wickra-terminal): Rust crate.
+- [PyPI](https://pypi.org/project/wickra-terminal/): Python package.
+- [npm](https://www.npmjs.com/package/wickra-terminal): Node package.
+
+## Related
+
+- [Wickra](https://wickra.org): The core streaming-indicator library the terminal is built on.

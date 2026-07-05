@@ -1,0 +1,13 @@
+{
+  "name": "Wickra Terminal",
+  "short_name": "Wickra Terminal",
+  "description": "A streaming trading terminal on the Wickra core, with TUI and Web renderers.",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
+  ],
+  "theme_color": "#0ea5e9",
+  "background_color": "#0e1219",
+  "display": "standalone",
+  "start_url": "/"
+}
