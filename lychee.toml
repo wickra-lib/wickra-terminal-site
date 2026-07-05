@@ -31,7 +31,4 @@ exclude = [
   'pkg\.go\.dev/github\.com/wickra-lib/wickra-terminal-go',
   'docs\.rs/wickra-terminal',
   'wickra-lib\.r-universe\.dev',
-  # product marketing subdomains go live once Cloudflare Pages is configured;
-  # excluded until then so the scheduled link check stays green. Remove on launch.
-  '(exchange|backtest|terminal|screener|xray|radar|copilot|shazam)\.wickra\.org',
 ]
