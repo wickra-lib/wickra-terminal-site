@@ -29,7 +29,7 @@ const structuredData = {
       operatingSystem: 'Windows, macOS, Linux, WebAssembly',
       programmingLanguage: ['Rust', 'Python', 'JavaScript', 'WebAssembly', 'C', 'C++', 'C#', 'Go', 'Java', 'R'],
       description:
-        'A streaming trading terminal on the Wickra core — live charts, order-book, tape and 514 indicators — with a native TUI and a Web renderer, in ten languages.',
+        'A streaming trading terminal on the Wickra core — live charts, order-book, tape and 460 indicators — with a native TUI and a Web renderer, in ten languages.',
       license: 'https://github.com/wickra-lib/wickra-terminal#license',
       publisher: { '@id': 'https://terminal.wickra.org/#organization' },
     },
@@ -39,7 +39,7 @@ const structuredData = {
 export default defineConfig({
   title: 'Wickra Terminal',
   description:
-    'A streaming trading terminal on the Wickra core — live charts, order-book, tape and 514 indicators — with a native TUI and a Web renderer, in ten languages.',
+    'A streaming trading terminal on the Wickra core — live charts, order-book, tape and 460 indicators — with a native TUI and a Web renderer, in ten languages.',
   lang: 'en-US',
   cleanUrls: true,
 
@@ -66,7 +66,7 @@ export default defineConfig({
       {
         property: 'og:description',
         content:
-          'A streaming trading terminal on the Wickra core: live charts, order-book, tape and 514 indicators, with a native TUI and a Web renderer sharing one data-driven core, in ten languages.',
+          'A streaming trading terminal on the Wickra core: live charts, order-book, tape and 460 indicators, with a native TUI and a Web renderer sharing one data-driven core, in ten languages.',
       },
     ],
     ['meta', { property: 'og:image', content: 'https://terminal.wickra.org/og-banner.webp' }],
@@ -92,8 +92,8 @@ export default defineConfig({
 
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Demo', link: '/demo' },
-      { text: 'Live', link: 'https://live.wickra.org' },
+      { text: 'Indicator demo', link: '/demo' },
+      { text: 'Live (library)', link: 'https://live.wickra.org' },
       { text: 'Benchmarks', link: '/benchmarks' },
       {
         text: 'API',
@@ -110,24 +110,19 @@ export default defineConfig({
         ],
       },
       { text: 'GitHub', link: 'https://github.com/wickra-lib/wickra-terminal' },
+      // The registry dropdown is deliberately absent until the first release.
+      // Nothing is published yet -- verified against the registries' own APIs,
+      // not their web pages, which answer 200 or 403 for names that do not
+      // exist: PyPI 404, npm 404, NuGet 404, docs.rs 404, and r-universe lists
+      // only `wickra`. Seven menu entries leading to seven dead ends is worse
+      // than no menu, and it is the same call already made for the README's
+      // registry badges. Restore it with the release.
       {
-        text: 'Links',
+        text: 'Pre-release',
         items: [
-          { text: 'crates.io', link: 'https://crates.io/crates/wickra-terminal' },
-          { text: 'PyPI', link: 'https://pypi.org/project/wickra-terminal/' },
-          { text: 'npm', link: 'https://www.npmjs.com/package/wickra-terminal' },
-          { text: 'NuGet', link: 'https://www.nuget.org/packages/WickraTerminal' },
-          { text: 'Maven Central', link: 'https://central.sonatype.com/artifact/org.wickra/wickra-terminal' },
-          { text: 'Go module', link: 'https://pkg.go.dev/github.com/wickra-lib/wickra-terminal-go' },
-          { text: 'r-universe', link: 'https://wickra-lib.r-universe.dev' },
-        ],
-      },
-      {
-        text: 'v0.1.0',
-        items: [
-          { text: 'Release notes', link: 'https://github.com/wickra-lib/wickra-terminal/releases' },
           { text: 'Changelog', link: 'https://github.com/wickra-lib/wickra-terminal/blob/main/CHANGELOG.md' },
-          { text: 'docs.rs', link: 'https://docs.rs/wickra-terminal/latest/wickra_terminal/' },
+          { text: 'Roadmap', link: 'https://github.com/wickra-lib/wickra-terminal/blob/main/ROADMAP.md' },
+          { text: 'Build from source', link: 'https://github.com/wickra-lib/wickra-terminal#quickstart' },
         ],
       },
       {

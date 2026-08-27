@@ -1,9 +1,9 @@
 # About Wickra Terminal
 
 Wickra Terminal is a streaming trading terminal built on the Wickra core: live
-charts, order-book, tape and 514 streaming indicators, with a native **TUI** and a
-**Web** front-end as *selectable renderers* of the same logic. One data-driven core,
-N front-ends — pick the renderer with `--render tui|web`.
+charts, order-book, tape and 460 streaming indicators, with a native **TUI** and a
+**Web** front-end as two renderers over the same logic. One data-driven core, N
+front-ends — they are separate programs, not two modes of one binary.
 
 ## What makes it different
 
@@ -12,9 +12,9 @@ N front-ends — pick the renderer with `--render tui|web`.
   renderer commands. The TUI maps a view-model to a ratatui widget; the Web app maps
   the *same* view-model to a canvas draw.
 - **Pluggable data sources.** The `DataSource` trait is an activatable module: `Live`
-  (the wickra-exchange layer over the ten largest venues), `Replay` (the
-  wickra-backtest engine with time-machine seek), or `Synth` (a deterministic
-  synthetic feed for demos and tests).
+  (the wickra-exchange layer over the ten largest venues), `Replay` (a recorded feed
+  with time-machine seek), `Manual` (host-fed, which is how the browser bridges its
+  own WebSocket), or `Synth` (a deterministic synthetic feed for demos and tests).
 - **The config is data.** A `Config` names the sources and the panel layout as JSON,
   so it crosses the C ABI and WASM unchanged.
 - **Deterministic core.** The frame is a pure function of the feed, byte-identical

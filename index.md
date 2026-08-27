@@ -6,7 +6,7 @@ titleTemplate: false
 hero:
   name: "Wickra Terminal"
   text: "One core. Ten languages. Two renderers."
-  tagline: "A streaming trading terminal on the Wickra core — live charts, order-book, tape and 514 indicators — with a native TUI and a Web front-end as selectable renderers of the same logic."
+  tagline: "A streaming trading terminal on the Wickra core — live charts, order-book, tape and 460 indicators — with a native TUI and a Web front-end as two renderers over the same logic."
   image:
     src: /wickra-mark.svg
     alt: Wickra Terminal
@@ -27,13 +27,13 @@ features:
     details: "terminal-core folds market events into an O(1) AppState and turns panels into view-models — values, series, colours — never renderer commands. The logic lives in one place."
   - icon: 🖥️
     title: Two renderers, one logic
-    details: "The native TUI maps a view-model to a ratatui widget; the Web app maps the same view-model to a canvas draw. Pick the front-end with --render tui|web."
+    details: "The native TUI maps a view-model to a ratatui widget; the Web app maps the same view-model to a canvas draw. They are separate programs over one core, not two modes of one binary."
   - icon: 🔌
     title: Pluggable data sources
-    details: "The DataSource trait is an activatable module: Live over the ten largest venues (wickra-exchange), Replay with time-machine seek (wickra-backtest), or a deterministic Synth feed."
+    details: "The DataSource trait is an activatable module: Live over the ten largest venues (wickra-exchange), Replay with time-machine seek, a host-fed Manual source, or a deterministic Synth feed."
   - icon: 📊
-    title: 514 streaming indicators
-    details: "Live charts, order-book and tape panels driven by the full Wickra indicator set, updated tick by tick on a streaming O(1) state."
+    title: 460 streaming indicators
+    details: "Live charts, order-book and tape panels driven by 460 of the Wickra indicator set — price, bar, tape, order-book and pairwise inputs — updated tick by tick on a streaming O(1) state."
   - icon: 🧩
     title: The config is data
     details: A Config names the sources and the panel layout as JSON. Because it is data, the exact same terminal crosses the C ABI and WASM unchanged.
@@ -46,7 +46,7 @@ features:
 const installTabs = [
   { label: 'Python', lang: 'bash', code: 'pip install wickra-terminal' },
   { label: 'Node',   lang: 'bash', code: 'npm install wickra-terminal' },
-  { label: 'Rust',   lang: 'bash', code: 'cargo add wickra-terminal' },
+  { label: 'Rust',   lang: 'bash', code: 'cargo install wickra-terminal' },
   { label: 'WASM',   lang: 'bash', code: 'npm install wickra-terminal-wasm' },
   { label: 'C',      lang: 'bash', code: '# prebuilt header + library from GitHub releases:\n# github.com/wickra-lib/wickra-terminal/releases' },
   { label: 'C#',     lang: 'bash', code: 'dotnet add package WickraTerminal' },
@@ -83,11 +83,14 @@ let raw = ''
 for (let i = 0; i < 20; i++) raw = term.command(JSON.stringify({ type: 'Tick' }))
 console.log(JSON.parse(raw).panels[0])`
 
-const cliCode = `# Native TUI renderer over a live Binance feed:
-wickra-terminal --render tui --source live:binance:BTC/USDT
+const cliCode = `# Native TUI over a live Binance feed:
+wickra-terminal --source live:binance:BTC/USDT
 
-# Same core, Web renderer, over a deterministic synthetic feed:
-wickra-terminal --render web --source synth:1`
+# Or a deterministic synthetic feed, no network:
+wickra-terminal --source synth:1
+
+# Anything beyond one source — panels, indicators, timeframe — is a config file:
+wickra-terminal --config my-terminal.toml`
 
 const snippetTabs = [
   { label: 'Python', lang: 'python',     code: pyCode },
@@ -95,6 +98,14 @@ const snippetTabs = [
   { label: 'CLI',    lang: 'bash',       code: cliCode },
 ]
 </script>
+
+::: warning Pre-release
+Nothing is published yet. The terminal depends on `wickra-exchange` as a git
+dependency and `cargo publish` rejects those, so the first release waits on that
+crate reaching crates.io. The install commands below are what they will be;
+until then, [build from
+source](https://github.com/wickra-lib/wickra-terminal#quickstart).
+:::
 
 ## The config is JSON, not code
 
@@ -131,11 +142,12 @@ is just another consumer of these frames.
 ## Built on the Wickra core
 
 Wickra Terminal is part of the [Wickra](https://wickra.org) ecosystem. Its panels are
-driven by the same typed feeds and indicators that
-[`wickra-core`](https://github.com/wickra-lib/wickra),
-[`wickra-exchange`](https://github.com/wickra-lib/wickra-exchange) and
-[`wickra-backtest`](https://github.com/wickra-lib/wickra-backtest) produce, so the
-terminal shows exactly the numbers a backtest or a live strategy would see.
+driven by [`wickra-core`](https://github.com/wickra-lib/wickra)'s indicators over
+[`wickra-exchange`](https://github.com/wickra-lib/wickra-exchange)'s typed feeds — the
+same two libraries [`wickra-backtest`](https://github.com/wickra-lib/wickra-backtest)
+computes on, which is why the terminal shows exactly the numbers a backtest or a live
+strategy would see. It does not depend on the backtester itself; the shared core is
+what makes the numbers agree.
 
 > Wickra Terminal is a software library, not a trading system, and gives no financial
 > advice — use at your own risk.

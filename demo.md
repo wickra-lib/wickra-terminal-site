@@ -3,6 +3,17 @@ title: Live demo
 description: Run any Wickra indicator over a generated price series — straight in your browser, powered by the wickra-wasm bundle from npm.
 ---
 
+::: warning This demo is the Wickra *library*, not the terminal
+Every value below comes from `wickra-wasm`, the indicator library's browser
+build. It is here because the two share a core, but it is not the terminal.
+
+The terminal's own browser renderer lives in
+[`web/`](https://github.com/wickra-lib/wickra-terminal/tree/main/web) — the same
+`terminal-core` compiled to WebAssembly, rendering charts, the order book, the
+tape and the footprint. It has no public host yet; until it does, this page is
+the closest thing on this site and it is a different product.
+:::
+
 # Live demo
 
 Every line below is computed by **`wickra-wasm`** running inside your
