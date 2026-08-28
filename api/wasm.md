@@ -8,10 +8,13 @@ protocol as the native bindings, producing byte-identical frames.
 npm install wickra-terminal-wasm
 ```
 
-```javascript
-import init, { Terminal } from 'wickra-terminal-wasm'
+The package is a `--target bundler` build, so there is no default export and no
+`init` to await: a bundler wires the module up and instantiates it for you.
+(`--target web`, which the repository's own `web/` renderer builds locally, is the
+one that takes `import init` and `await init()`.)
 
-await init()
+```javascript
+import { Terminal } from 'wickra-terminal-wasm'
 
 const config = JSON.stringify({
   sources: [{ Synth: { seed: 1 } }],
