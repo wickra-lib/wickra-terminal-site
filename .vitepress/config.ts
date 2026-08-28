@@ -29,7 +29,7 @@ const structuredData = {
       operatingSystem: 'Windows, macOS, Linux, WebAssembly',
       programmingLanguage: ['Rust', 'Python', 'JavaScript', 'WebAssembly', 'C', 'C++', 'C#', 'Go', 'Java', 'R'],
       description:
-        'A streaming trading terminal on the Wickra core — live charts, order-book, tape and 460 indicators — with a native TUI and a Web renderer, in ten languages.',
+        'A streaming trading terminal on the Wickra core — live charts, order-book, tape and 455 indicators — with a native TUI and a Web renderer, in ten languages.',
       license: 'https://github.com/wickra-lib/wickra-terminal#license',
       publisher: { '@id': 'https://terminal.wickra.org/#organization' },
     },
@@ -39,7 +39,7 @@ const structuredData = {
 export default defineConfig({
   title: 'Wickra Terminal',
   description:
-    'A streaming trading terminal on the Wickra core — live charts, order-book, tape and 460 indicators — with a native TUI and a Web renderer, in ten languages.',
+    'A streaming trading terminal on the Wickra core — live charts, order-book, tape and 455 indicators — with a native TUI and a Web renderer, in ten languages.',
   lang: 'en-US',
   cleanUrls: true,
 
@@ -66,7 +66,7 @@ export default defineConfig({
       {
         property: 'og:description',
         content:
-          'A streaming trading terminal on the Wickra core: live charts, order-book, tape and 460 indicators, with a native TUI and a Web renderer sharing one data-driven core, in ten languages.',
+          'A streaming trading terminal on the Wickra core: live charts, order-book, tape and 455 indicators, with a native TUI and a Web renderer sharing one data-driven core, in ten languages.',
       },
     ],
     ['meta', { property: 'og:image', content: 'https://terminal.wickra.org/og-banner.webp' }],

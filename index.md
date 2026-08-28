@@ -6,7 +6,7 @@ titleTemplate: false
 hero:
   name: "Wickra Terminal"
   text: "One core. Ten languages. Two renderers."
-  tagline: "A streaming trading terminal on the Wickra core — live charts, order-book, tape and 460 indicators — with a native TUI and a Web front-end as two renderers over the same logic."
+  tagline: "A streaming trading terminal on the Wickra core — live charts, order-book, tape and 455 indicators — with a native TUI and a Web front-end as two renderers over the same logic."
   image:
     src: /wickra-mark.svg
     alt: Wickra Terminal
@@ -32,8 +32,8 @@ features:
     title: Pluggable data sources
     details: "The DataSource trait is an activatable module: Live over the ten largest venues (wickra-exchange), Replay with time-machine seek, a host-fed Manual source, or a deterministic Synth feed."
   - icon: 📊
-    title: 460 streaming indicators
-    details: "Live charts, order-book and tape panels driven by 460 of the Wickra indicator set — price, bar, tape, order-book and pairwise inputs — updated tick by tick on a streaming O(1) state."
+    title: 455 streaming indicators
+    details: "Live charts, order-book and tape panels driven by 455 of the Wickra indicator set — price, bar, tape, order-book and pairwise inputs — updated tick by tick on a streaming O(1) state."
   - icon: 🧩
     title: The config is data
     details: A Config names the sources and the panel layout as JSON. Because it is data, the exact same terminal crosses the C ABI and WASM unchanged.

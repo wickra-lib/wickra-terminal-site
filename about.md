@@ -1,7 +1,7 @@
 # About Wickra Terminal
 
 Wickra Terminal is a streaming trading terminal built on the Wickra core: live
-charts, order-book, tape and 460 streaming indicators, with a native **TUI** and a
+charts, order-book, tape and 455 streaming indicators, with a native **TUI** and a
 **Web** front-end as two renderers over the same logic. One data-driven core, N
 front-ends — they are separate programs, not two modes of one binary.
 
