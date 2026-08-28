@@ -1,0 +1,48 @@
+version: 2
+updates:
+  # The site's own npm dependencies: VitePress and Vue, the two Vite plugins the
+  # WASM demo needs, lightweight-charts, and `wickra-wasm` itself.
+  #
+  # `wickra-wasm` is the reason this file exists. It was pinned at `^0.9.7`,
+  # which on a 0.x caret is minor-locked, so it resolved to 0.9.9 while the
+  # library had published 1.0.1 -- and nothing in the repository was ever going
+  # to move it. The live demo runs against whatever this resolves to, so a pin
+  # nobody watches is the demo quietly drifting behind the library it
+  # demonstrates.
+  - package-ecosystem: npm
+    directory: "/"
+    schedule:
+      interval: monthly
+      time: "06:00"
+      timezone: "Etc/UTC"
+    open-pull-requests-limit: 10
+    cooldown:
+      default-days: 7
+    commit-message:
+      prefix: "deps(npm)"
+    groups:
+      # `wickra-wasm` on its own: a bump to it changes what the demo computes,
+      # so it wants reviewing against the picker rather than being folded into a
+      # VitePress patch release.
+      wickra:
+        patterns: ["wickra-wasm"]
+      site:
+        patterns: ["*"]
+        exclude-patterns: ["wickra-wasm"]
+
+  # The three workflows here (link check, badge refresh, zizmor) pin their
+  # actions by full SHA, which only something watching them will ever move.
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: monthly
+      time: "06:00"
+      timezone: "Etc/UTC"
+    open-pull-requests-limit: 10
+    cooldown:
+      default-days: 7
+    commit-message:
+      prefix: "deps(actions)"
+    groups:
+      github-actions:
+        patterns: ["*"]
