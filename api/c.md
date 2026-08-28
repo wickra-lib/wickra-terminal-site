@@ -3,6 +3,14 @@
 The C ABI hub. A single `wickra_terminal.h` header + prebuilt library links from C,
 C++, or any C-capable language. Drive a terminal with the JSON command protocol.
 
+::: warning Pre-release
+Nothing is published yet. The terminal depends on `wickra-exchange` as a git
+dependency and `cargo publish` rejects those, so the first release waits on that
+crate reaching crates.io. What follows is what installing will look like; until
+then, [build from
+source](https://github.com/wickra-lib/wickra-terminal#quickstart).
+:::
+
 ```bash
 # prebuilt wickra_terminal.h + library per platform:
 # github.com/wickra-lib/wickra-terminal/releases

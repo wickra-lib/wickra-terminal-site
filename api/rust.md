@@ -7,6 +7,14 @@ Two crates, and which one you want depends on what you are building.
 `wickra-terminal` is the TUI binary, so it is installed rather than added as a
 dependency; `terminal-core` is the library the snippet below uses.
 
+::: warning Pre-release
+Nothing is published yet. The terminal depends on `wickra-exchange` as a git
+dependency and `cargo publish` rejects those, so the first release waits on that
+crate reaching crates.io. What follows is what installing will look like; until
+then, [build from
+source](https://github.com/wickra-lib/wickra-terminal#quickstart).
+:::
+
 ```bash
 cargo install wickra-terminal   # the native TUI
 cargo add terminal-core         # the core, to build your own front-end

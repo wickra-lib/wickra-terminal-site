@@ -3,6 +3,14 @@
 An FFM (Panama) wrapper over the C ABI. Construct a `Terminal` from a JSON config,
 then drive it with `command(json) -> json` — subscribe a symbol, then tick.
 
+::: warning Pre-release
+Nothing is published yet. The terminal depends on `wickra-exchange` as a git
+dependency and `cargo publish` rejects those, so the first release waits on that
+crate reaching crates.io. What follows is what installing will look like; until
+then, [build from
+source](https://github.com/wickra-lib/wickra-terminal#quickstart).
+:::
+
 ```xml
 <!-- Maven Central -->
 <dependency>

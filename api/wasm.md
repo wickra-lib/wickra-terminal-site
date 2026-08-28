@@ -4,6 +4,14 @@ A `wasm-bindgen` build for the browser and other WebAssembly runtimes — the sa
 that drives the bundled Web renderer. The same `Terminal` handle and JSON command
 protocol as the native bindings, producing byte-identical frames.
 
+::: warning Pre-release
+Nothing is published yet. The terminal depends on `wickra-exchange` as a git
+dependency and `cargo publish` rejects those, so the first release waits on that
+crate reaching crates.io. What follows is what installing will look like; until
+then, [build from
+source](https://github.com/wickra-lib/wickra-terminal#quickstart).
+:::
+
 ```bash
 npm install wickra-terminal-wasm
 ```
