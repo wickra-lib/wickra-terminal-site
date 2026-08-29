@@ -3,7 +3,7 @@
     "alt": "CI",
     "href": "https://github.com/wickra-lib/wickra-terminal/actions/workflows/ci.yml",
     "file": "/badges/ci.svg",
-    "width": 83,
+    "width": 91,
     "height": 20
   },
   {
@@ -17,7 +17,7 @@
     "alt": "codecov",
     "href": "https://codecov.io/gh/wickra-lib/wickra-terminal",
     "file": "/badges/codecov.svg",
-    "width": 137,
+    "width": 112,
     "height": 20
   },
   {
