@@ -21,6 +21,55 @@
     "height": 20
   },
   {
+    "alt": "GitHub release",
+    "href": "https://github.com/wickra-lib/wickra-terminal/releases/latest",
+    "file": "/badges/release.svg",
+    "width": 111,
+    "height": 20
+  },
+  {
+    "alt": "crates.io",
+    "href": "https://crates.io/crates/wickra-terminal",
+    "file": "/badges/crates.svg",
+    "width": 119,
+    "height": 20
+  },
+  {
+    "alt": "PyPI",
+    "href": "https://pypi.org/project/wickra-terminal/",
+    "file": "/badges/pypi.svg",
+    "width": 95,
+    "height": 20
+  },
+  {
+    "alt": "npm",
+    "href": "https://www.npmjs.com/package/wickra-terminal",
+    "file": "/badges/npm.svg",
+    "width": 97,
+    "height": 20
+  },
+  {
+    "alt": "NuGet",
+    "href": "https://www.nuget.org/packages/WickraTerminal",
+    "file": "/badges/nuget.svg",
+    "width": 103,
+    "height": 20
+  },
+  {
+    "alt": "Maven Central",
+    "href": "https://central.sonatype.com/artifact/org.wickra/wickra-terminal",
+    "file": "/badges/maven.svg",
+    "width": 153,
+    "height": 20
+  },
+  {
+    "alt": "Go module",
+    "href": "https://pkg.go.dev/github.com/wickra-lib/wickra-terminal-go",
+    "file": "/badges/go.svg",
+    "width": 85,
+    "height": 20
+  },
+  {
     "alt": "License: MIT OR Apache-2.0",
     "href": "https://github.com/wickra-lib/wickra-terminal#license",
     "file": "/badges/license.svg",
