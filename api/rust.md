@@ -38,6 +38,6 @@ println!("{frame}");
 
 ## More
 
-- [crates.io/crates/wickra-terminal](https://crates.io/crates/wickra-terminal) (the TUI) · [crates.io/crates/terminal-core](https://crates.io/crates/terminal-core) · [docs.rs](https://docs.rs/terminal-core)
+- [crates.io/crates/wickra-terminal](https://crates.io/crates/wickra-terminal) (the TUI) · [crates.io/crates/wickra-terminal-core](https://crates.io/crates/wickra-terminal-core) · [docs.rs](https://docs.rs/wickra-terminal-core)
 - [Source & examples](https://github.com/wickra-lib/wickra-terminal/tree/main/examples/rust)
 - [Renderers & panels](https://github.com/wickra-lib/wickra-terminal/tree/main/docs)
