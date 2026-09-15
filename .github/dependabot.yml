@@ -20,6 +20,14 @@ updates:
       default-days: 7
     commit-message:
       prefix: "deps(npm)"
+    # lightweight-charts 5 removed the per-type series constructors the demo
+    # calls (`addCandlestickSeries`, `addLineSeries`); every site in the family
+    # draws with the 4.x API. The migration to `addSeries(CandlestickSeries,
+    # ...)` is one change across all of them, made on purpose, not a bump that
+    # lands here on its own. Minor and patch releases of 4.x still arrive.
+    ignore:
+      - dependency-name: "lightweight-charts"
+        update-types: ["version-update:semver-major"]
     groups:
       # `wickra-wasm` on its own: a bump to it changes what the demo computes,
       # so it wants reviewing against the picker rather than being folded into a
