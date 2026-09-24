@@ -51,7 +51,7 @@ const installTabs = [
   { label: 'C',      lang: 'bash', code: '# prebuilt header + library from GitHub releases:\n# github.com/wickra-lib/wickra-terminal/releases' },
   { label: 'C#',     lang: 'bash', code: 'dotnet add package WickraTerminal' },
   { label: 'Go',     lang: 'bash', code: 'go get github.com/wickra-lib/wickra-terminal-go' },
-  { label: 'Java',   lang: 'xml',  code: '<!-- Maven Central -->\n<dependency>\n  <groupId>org.wickra</groupId>\n  <artifactId>wickra-terminal</artifactId>\n  <version>0.1.5</version>\n</dependency>' },
+  { label: 'Java',   lang: 'xml',  code: '<!-- Maven Central -->\n<dependency>\n  <groupId>org.wickra</groupId>\n  <artifactId>wickra-terminal</artifactId>\n  <version>0.1.6</version>\n</dependency>' },
   { label: 'R',      lang: 'r',    code: 'install.packages("wickraterminal", repos = "https://wickra-lib.r-universe.dev")' },
 ]
 

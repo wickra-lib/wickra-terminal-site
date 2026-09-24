@@ -16,7 +16,7 @@ source](https://github.com/wickra-lib/wickra-terminal#quickstart).
 <dependency>
   <groupId>org.wickra</groupId>
   <artifactId>wickra-terminal</artifactId>
-  <version>0.1.5</version>
+  <version>0.1.6</version>
 </dependency>
 ```
 
