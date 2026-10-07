@@ -135,7 +135,7 @@ plus a C ABI for C, C++, C#, Go, Java and R.
 
 Build a terminal from a config, subscribe a symbol, then pull frames. The `command`
 API returns the same bytes in every binding — the [Web renderer](https://github.com/wickra-lib/wickra-terminal/tree/main/web)
-is just another consumer of these frames.
+(live at [terminal-web.wickra.org](https://terminal-web.wickra.org)) is just another consumer of these frames.
 
 <InstallTabs :tabs="snippetTabs" />
 
