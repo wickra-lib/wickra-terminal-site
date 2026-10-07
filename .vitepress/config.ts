@@ -92,6 +92,7 @@ export default defineConfig({
 
     nav: [
       { text: 'Home', link: '/' },
+      { text: 'Web app', link: 'https://terminal-web.wickra.org' },
       { text: 'Indicator demo', link: '/demo' },
       { text: 'Live (library)', link: 'https://live.wickra.org' },
       { text: 'Benchmarks', link: '/benchmarks' },

@@ -38,4 +38,4 @@ console.log(JSON.parse(raw).panels[0])
 ## More
 
 - [npm (wickra-terminal-wasm)](https://www.npmjs.com/package/wickra-terminal-wasm)
-- [Web renderer](https://github.com/wickra-lib/wickra-terminal/tree/main/web) · [Source & bindings](https://github.com/wickra-lib/wickra-terminal/tree/main/bindings/wasm)
+- [Web renderer](https://github.com/wickra-lib/wickra-terminal/tree/main/web) ([live](https://terminal-web.wickra.org)) · [Source & bindings](https://github.com/wickra-lib/wickra-terminal/tree/main/bindings/wasm)

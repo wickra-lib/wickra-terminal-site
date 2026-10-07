@@ -10,8 +10,9 @@ build. It is here because the two share a core, but it is not the terminal.
 The terminal's own browser renderer lives in
 [`web/`](https://github.com/wickra-lib/wickra-terminal/tree/main/web) — the same
 `terminal-core` compiled to WebAssembly, rendering charts, the order book, the
-tape and the footprint. It has no public host yet; until it does, this page is
-the closest thing on this site and it is a different product.
+tape and the footprint. It runs at
+**[terminal-web.wickra.org](https://terminal-web.wickra.org)**, over a live
+Binance feed; this page is a different product.
 :::
 
 # The core, live
