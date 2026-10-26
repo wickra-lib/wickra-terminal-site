@@ -33,7 +33,7 @@ features:
     details: "The DataSource trait is an activatable module: Live over the ten largest venues (wickra-exchange), Replay with time-machine seek, a host-fed Manual source, or a deterministic Synth feed."
   - icon: 📊
     title: 497 streaming indicators
-    details: "Live charts, order-book and tape panels driven by 497 of the Wickra indicator set — price, bar, tape, order-book and pairwise inputs — updated tick by tick on a streaming O(1) state."
+    details: "Live charts, order-book and tape panels driven by the 497 indicators its registry resolves — price, bar, tape, order-book and pairwise inputs — updated tick by tick on a streaming O(1) state."
   - icon: 🧩
     title: The config is data
     details: A Config names the sources and the panel layout as JSON. Because it is data, the exact same terminal crosses the C ABI and WASM unchanged.
